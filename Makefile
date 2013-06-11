@@ -1,3 +1,3 @@
-public/build.js: client.js
-	browserify -t brfs client.js > public/build.js
+public/build.js: public/index.js
+	browserify -t brfs public/index.js > public/build.js
 

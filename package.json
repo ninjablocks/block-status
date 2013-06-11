@@ -10,13 +10,19 @@
   "author": "",
   "license": "BSD",
   "devDependencies": {
-    "browserify": "~2.17.3"
+    "browserify": "~2.17.3",
+    "brfs": "0.0.5"
   },
   "dependencies": {
     "through": "~2.3.4",
     "commander": "~1.1.1",
     "mux-demux": "~3.7.3",
     "ecstatic": "~0.4.2",
-    "shoe": "0.0.11"
-  }
+    "shoe": "0.0.11",
+    "scuttlebutt": "~5.5.20",
+    "hyperglue": "~1.1.0",
+    "ninja-toolbelt": "git://github.com/ninjablocks/ninja-toolbelt.git",
+    "equals": "~0.3.2"
+  },
+  "browser": "client.js"
 }

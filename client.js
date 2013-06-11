@@ -2,23 +2,31 @@
 
 var shoe = require('shoe')
 var MuxDemux = require('mux-demux')
-var through = require('through')
 var Model = require('scuttlebutt/model')
 var render = require('./status-render')
-var status = new Model()
 
-status.on('update', function() {
-  document.querySelector('#status').innerHTML = ''
-  document.querySelector('#status').appendChild(render(status.toJSON()))
-})
+module.exports = function(options) {
+  options = options || {}
+  var route = options.route || '/status'
 
-var admin = shoe('/status')
-var mx = MuxDemux()
-mx.on('connection', function(stream) {
-  if (stream.meta === 'status') {
-    stream.pipe(status.createStream()).pipe(stream)
-  }
-})
+  var status = new Model()
+  status.el = options.el || document.createElement('div')
 
-admin.pipe(mx).pipe(admin)
+  status.on('update', function() {
+    status.el.innerHTML = ''
+    status.el.appendChild(render(status.toJSON()))
+  })
+
+  var socket = shoe(route)
+  var mx = MuxDemux()
+  mx.on('connection', function(stream) {
+    if (stream.meta === 'status') {
+      stream.pipe(status.createStream()).pipe(stream)
+    }
+  })
+
+  socket.pipe(mx).pipe(socket)
+  return status
+}
+
 
