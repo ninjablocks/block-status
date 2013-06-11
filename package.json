@@ -1,0 +1,22 @@
+{
+  "name": "block-status",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "devDependencies": {
+    "browserify": "~2.17.3"
+  },
+  "dependencies": {
+    "through": "~2.3.4",
+    "commander": "~1.1.1",
+    "mux-demux": "~3.7.3",
+    "ecstatic": "~0.4.2",
+    "shoe": "0.0.11"
+  }
+}
