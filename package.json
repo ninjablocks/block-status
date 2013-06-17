@@ -13,6 +13,9 @@
     "browserify": "~2.17.3",
     "brfs": "0.0.5"
   },
+  "bin": {
+    "block-status": "bin/server"
+  },
   "dependencies": {
     "through": "~2.3.4",
     "commander": "~1.1.1",
