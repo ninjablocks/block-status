@@ -1,14 +1,27 @@
 #!/usr/bin/env node
 
 var http = require('http')
+var fs = require('fs')
+
+var program = require('commander')
+
+program
+.option('-v, --verbose', 'verbose program output')
+.parse(process.argv)
+
+var NAME = require('../package.json').name
+if (!process.env['DEBUG']) {
+  if (program.verbose) process.env['DEBUG'] = '*'
+  else process.env['DEBUG'] = NAME
+}
+
 var ecstatic = require('ecstatic')(__dirname + '/../public')
 var shoe = require('shoe')
 var MuxDemux = require('mux-demux')
-
-var status = require('../index')
-var fs = require('fs')
 var read = fs.createReadStream
 
+var status = require('../index')
+var log = require('debug')(NAME)
 var app = http.createServer(function(req, res) {
   ecstatic(req, res)
 })
@@ -17,4 +30,5 @@ status.install(app)
 
 app.listen(function() {
   process.send && process.send(app.address())
+  log('listening on', app.address().port)
 })

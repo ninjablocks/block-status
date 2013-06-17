@@ -22,7 +22,8 @@
     "scuttlebutt": "~5.5.20",
     "hyperglue": "~1.1.0",
     "ninja-toolbelt": "git://github.com/ninjablocks/ninja-toolbelt.git",
-    "equals": "~0.3.2"
+    "equals": "~0.3.2",
+    "debug": "~0.7.2"
   },
   "browser": "client.js"
 }
