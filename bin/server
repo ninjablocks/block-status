@@ -15,4 +15,6 @@ var app = http.createServer(function(req, res) {
 
 status.install(app)
 
-app.listen(9096)
+app.listen(function() {
+  process.send && process.send(app.address())
+})
