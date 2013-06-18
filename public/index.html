@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Block Status</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="default.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      body, html {
+        height: 100%;
+        width: 100%;
+        padding:0;
+        margin: 0;
+        background: transparent;
+      }
+
+      #status table {
+        width: 100%;
+        margin-top: 20%;
+      }
+
+      #status .hasinternet {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <div id="status"></div>
+    <div id="status" class="container"></div>
     <script src="build.js"></script>
   </body>
 </html>
-
-
-
-

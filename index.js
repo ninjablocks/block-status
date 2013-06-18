@@ -1,5 +1,5 @@
-var http = require('http')
-var ecstatic = require('ecstatic')(__dirname + '/../public')
+"use strict"
+
 var shoe = require('shoe')
 var MuxDemux = require('mux-demux')
 var status = require('./status')

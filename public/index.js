@@ -1,2 +1,4 @@
 var status = require('../client.js')
-document.body.appendChild(status().el)
+status({
+  el: document.querySelector('#status')
+})
