@@ -8,7 +8,7 @@ module.exports = function(data) {
   data.ip = data.ip || []
   var result = hyperglue(html, {
     '.hasinternet': {
-      _html: data.hasInternet ? '&#10003;' : '&#10004;'
+      _html: data.hasInternet ? '&#10004;' : '&#10008;'
     },
     '.ip.value': {
       _text: data.ip.join(', '),
