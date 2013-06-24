@@ -1,15 +1,17 @@
 {
   "name": "block-status",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Display simple diagnostic info about a ninjablock.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "make -B"
   },
-  "repository": "",
-  "author": "",
-  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ninjablocks/block-status.git"
+  },
+  "author": "Tim Oxley",
+  "license": "MIT",
   "devDependencies": {
     "browserify": "~2.17.3",
     "brfs": "0.0.5"
@@ -25,9 +27,13 @@
     "shoe": "0.0.11",
     "scuttlebutt": "~5.5.20",
     "hyperglue": "~1.1.0",
-    "ninja-toolbelt": "git://github.com/ninjablocks/ninja-toolbelt.git",
+    "ninja-toolbelt": "ninjablocks/ninja-toolbelt",
     "equals": "~0.3.2",
     "debug": "~0.7.2"
   },
-  "browser": "client.js"
+  "browser": "client.js",
+  "gitHead": "a346e7df55116a9ca7cfa50fd95244b8df027a93",
+  "bugs": {
+    "url": "https://github.com/ninjablocks/block-status/issues"
+  }
 }
