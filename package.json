@@ -27,7 +27,7 @@
     "shoe": "0.0.11",
     "scuttlebutt": "~5.5.20",
     "hyperglue": "~1.1.0",
-    "ninja-toolbelt": "ninjablocks/ninja-toolbelt",
+    "ninja-toolbelt": "git://github.com/ninjablocks/ninja-toolbelt",
     "equals": "~0.3.2",
     "debug": "~0.7.2"
   },
