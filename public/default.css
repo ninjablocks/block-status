@@ -83,8 +83,7 @@ abbr {
 ================================================== */
   .logo {   
     
-      font-family: "Asap";
-      
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     
     font-weight: normal;      
     font-size: 32px; 
@@ -97,7 +96,7 @@ abbr {
   }
 h1, h2, h3, h4, h5, h6, .collection_title, .headline, p.subtitle { 
     
-      font-family: "Asap";
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       
     font-weight: normal;    
     text-transform: none;
