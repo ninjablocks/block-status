@@ -39,5 +39,5 @@ status.install(app)
 
 app.listen(function() {
   process.send && process.send(app.address())
-  log('listening on', app.address().port)
+  log('listening on %d', app.address().port)
 })
