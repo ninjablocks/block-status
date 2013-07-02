@@ -1,0 +1,28 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  padding:0;
+  margin: 0;
+  background: transparent;
+}
+
+#status {
+  padding-top: 10%;
+}
+
+#status table {
+  width: 100%;
+}
+
+#status .hasinternet {
+  text-align: center;
+}
+#status.restarted {
+  text-align: center;
+}
+#status.restarted h2 {
+  text-align: center;
+  padding: 5%;
+  background: white;
+  display: inline-block;
+}
