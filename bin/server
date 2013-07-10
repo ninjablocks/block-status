@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
-var http = require('http')
-var fs = require('fs')
+"use strict"
 
 var program = require('commander')
+var fs = require('fs')
 
 program
-.option('-v, --verbose', 'verbose program output')
-.option('-p, --pid', 'verbose program output')
-.option('--pid [file]', 'file containing pid of ninja client', '')
-.parse(process.argv)
+  .option('-v, --verbose', 'verbose program output')
+  .option('-p, --pid', 'verbose program output')
+  .option('--port [port]', 'port to listen on', Number)
+  .option('--pid [file]', 'file containing pid of ninja client', '')
+  .parse(process.argv)
 
 var NAME = require('../package.json').name
 if (!process.env['DEBUG']) {
@@ -17,27 +18,6 @@ if (!process.env['DEBUG']) {
   else process.env['DEBUG'] = NAME
 }
 
-var ecstatic = require('ecstatic')(__dirname + '/../public')
-var shoe = require('shoe')
-var MuxDemux = require('mux-demux')
-var read = fs.createReadStream
-var killClient = require('ninja-toolbelt').restart.killClient
-var status = require('../index')
-var log = require('debug')(NAME)
-var app = http.createServer(function(req, res) {
-  if (req.url === '/restart.html') {
-    killClient(program.pid, function(err) {
-      log('block restart attempted')
-      if (err) log(err) // continue anyway
-      ecstatic(req, res)
-    })
-  }
-  else ecstatic(req, res)
-})
+if (program.pid) program.pid = fs.readFileSync(program.pid, 'utf8')
 
-status.install(app)
-
-app.listen(function() {
-  process.send && process.send(app.address())
-  log('listening on %d', app.address().port)
-})
+require('../index')(program)

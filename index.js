@@ -1,17 +1,22 @@
 "use strict"
 
-var shoe = require('shoe')
-var MuxDemux = require('mux-demux')
-var status = require('./status')
+var http = require('http')
+var ecstatic = require('ecstatic')(__dirname + '/public')
+var log = require('debug')(process.env['DEBUG'])
+var status = require('./lib/status')
+var restart = require('./lib/restart')
 
-exports.install = function(app, route) {
-  route = route || '/status'
-  var sock = shoe(function(stream) {
-    var mx = MuxDemux()
-    stream.pipe(mx).pipe(stream)
-    var statusStream = mx.createStream('status')
-    statusStream.pipe(status.createStream()).pipe(statusStream)
+module.exports = function(program) {
+
+  var app = http.createServer(function(req, res) {
+    if (req.url === '/restart.html') restart(program.pid, req, res)
+    else ecstatic(req, res)
   })
+  // middlewares
+  status(app)
 
-  sock.install(app, route)
+  app.listen(program.port || 0, function() {
+    process.send && process.send(app.address())
+    log('listening on %d', app.address().port)
+  })
 }
