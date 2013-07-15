@@ -13,13 +13,10 @@ body, html {
 #status table {
   width: 100%;
 }
+#status table td {
+  text-align: center;
+}
 
-#status .hasinternet {
-  text-align: center;
-}
-#status.restarted {
-  text-align: center;
-}
 #status.restarted h2 {
   text-align: center;
   padding: 5%;
