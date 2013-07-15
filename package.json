@@ -30,7 +30,8 @@
     "ninja-toolbelt": "git://github.com/ninjablocks/ninja-toolbelt",
     "equals": "~0.3.2",
     "debug": "~0.7.2",
-    "routes-router": "~1.0.3"
+    "routes-router": "~1.0.3",
+    "concat-stream": "~1.0.0"
   },
   "browser": "client.js",
   "gitHead": "a346e7df55116a9ca7cfa50fd95244b8df027a93",
