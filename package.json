@@ -1,6 +1,6 @@
 {
   "name": "block-status",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Display simple diagnostic info about a ninjablock.",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "shoe": "0.0.11",
     "scuttlebutt": "~5.5.20",
     "hyperglue": "~1.1.0",
-    "ninja-toolbelt": "git://github.com/ninjablocks/ninja-toolbelt",
+    "ninja-toolbelt": "git://github.com/ninjablocks/ninja-toolbelt#0.2.13",
     "equals": "~0.3.2",
     "debug": "~0.7.2",
     "routes-router": "~1.0.3",
